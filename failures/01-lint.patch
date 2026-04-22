@@ -1,0 +1,11 @@
+--- a/src/main/java/com/phalanx/calc/MathOps.java
++++ b/src/main/java/com/phalanx/calc/MathOps.java
+@@ -25,4 +25,8 @@ public final class MathOps {
+         }
+         return a / b;
+     }
++
++    public static String verboseDescription() {
++        return "This is a deliberately very long descriptive string that will trip Checkstyle's LineLength rule at the 100-character cap in the testbed.";
++    }
+ }
