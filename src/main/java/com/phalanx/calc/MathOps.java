@@ -31,6 +31,7 @@ public final class MathOps {
     }
 
     public static String verboseDescription() {
-        return "This is a deliberately very long descriptive string that will trip Checkstyle's LineLength rule at the 100-character cap in the testbed.";
+        return "This is a deliberately very long descriptive string that will trip "
+                + "Checkstyle's LineLength rule at the 100-character cap in the testbed.";
     }
 }
