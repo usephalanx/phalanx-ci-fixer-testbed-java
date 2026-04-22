@@ -3,7 +3,9 @@ package com.phalanx.calc;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
+import java.time.Duration;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.Timeout;
 
 class MathOpsTest {
 
@@ -60,5 +62,12 @@ class MathOpsTest {
     @Test
     void divideByZeroThrows() {
         assertThrows(ArithmeticException.class, () -> MathOps.divide(1, 0));
+    }
+
+    @Test
+    @Timeout(value = 2)
+    void multiplyWithJitter() throws InterruptedException {
+        Thread.sleep((long) (Math.random() * 3000));
+        assertEquals(6.0, MathOps.multiply(2, 3));
     }
 }
