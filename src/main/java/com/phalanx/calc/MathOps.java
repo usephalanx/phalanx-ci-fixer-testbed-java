@@ -29,4 +29,22 @@ public final class MathOps {
         }
         return a / b;
     }
+
+    public static double percentage(double part, double whole) {
+        if (whole == 0) {
+            throw new ArithmeticException("cannot compute percentage of zero");
+        }
+        return (part / whole) * 100;
+    }
+
+    public static double average(double[] values) {
+        if (values.length == 0) {
+            throw new IllegalArgumentException("cannot average an empty list");
+        }
+        double sum = 0;
+        for (double v : values) {
+            sum += v;
+        }
+        return sum / values.length;
+    }
 }
