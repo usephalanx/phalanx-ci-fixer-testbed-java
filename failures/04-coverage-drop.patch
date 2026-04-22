@@ -1,6 +1,6 @@
 --- a/src/main/java/com/phalanx/calc/MathOps.java
 +++ b/src/main/java/com/phalanx/calc/MathOps.java
-@@ -25,4 +25,18 @@ public final class MathOps {
+@@ -25,4 +25,22 @@ public final class MathOps {
          }
          return a / b;
      }
