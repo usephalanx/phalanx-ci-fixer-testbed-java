@@ -20,8 +20,7 @@ public final class MathOps {
     }
 
     public static double multiply(double a, double b) {
-        // BUG (intentional testbed failure): multiply is using add's operator.
-        return a + b;
+        return a * b;
     }
 
     public static double divide(double a, double b) {
