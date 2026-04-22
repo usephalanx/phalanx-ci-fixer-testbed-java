@@ -61,4 +61,48 @@ class MathOpsTest {
     void divideByZeroThrows() {
         assertThrows(ArithmeticException.class, () -> MathOps.divide(1, 0));
     }
+
+    // --- percentage ---
+
+    @Test
+    void percentageHalf() {
+        assertEquals(50.0, MathOps.percentage(1, 2));
+    }
+
+    @Test
+    void percentageHundred() {
+        assertEquals(100.0, MathOps.percentage(5, 5));
+    }
+
+    @Test
+    void percentageSmall() {
+        assertEquals(25.0, MathOps.percentage(1, 4));
+    }
+
+    @Test
+    void percentageOfZeroThrows() {
+        assertThrows(ArithmeticException.class, () -> MathOps.percentage(5, 0));
+    }
+
+    // --- average ---
+
+    @Test
+    void averageSingleValue() {
+        assertEquals(7.0, MathOps.average(new double[]{7}));
+    }
+
+    @Test
+    void averageMultipleValues() {
+        assertEquals(3.0, MathOps.average(new double[]{1, 2, 3, 4, 5}));
+    }
+
+    @Test
+    void averageWithNegatives() {
+        assertEquals(0.0, MathOps.average(new double[]{-1, 0, 1}));
+    }
+
+    @Test
+    void averageEmptyThrows() {
+        assertThrows(IllegalArgumentException.class, () -> MathOps.average(new double[]{}));
+    }
 }
